@@ -43,7 +43,7 @@ const Home = () => {
     <form className="home-container">
       <div className="box">
         <img src={logo} alt="logo" />
-        <h1>Descubra que dia aproximadamente você será vacinado</h1>
+        <h1>Descubra aproximadamente a partir de que dia você será vacinado</h1>
         <Form age={age} state={state} setState={setState} setAge={setAge} />
         <Button
           variant="contained"
