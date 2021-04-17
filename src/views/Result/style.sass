@@ -1,0 +1,77 @@
+@import "../../index.sass"
+
+.result-container
+  display: flex
+  width: 100%
+  height: 100vh
+  align-items: center
+  justify-content: center
+
+  .box
+    min-height: 60vh
+    height: auto
+    background: $white
+    padding: 2rem
+    width: 50%
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+    border-radius: 15px
+
+  h2
+    text-align: center
+
+    span
+      color: $primary
+
+  h1
+    color: $primary
+    font-size: 48px
+    font-weight: normal
+
+  button
+    padding: 1rem 2rem
+    border-radius: 10px
+
+  .row
+    display: flex
+    width: 100%
+
+    .column
+      margin: 0 1rem
+      width: 50%
+
+      p
+        text-align: justify
+
+      a
+        text-decoration: none
+        color: $primary
+        word-wrap: break-word
+
+@media screen and (max-width: 769px)
+
+  .result-container
+    height: auto
+
+    .box
+      width: 100% !important
+      padding: 0
+
+    h1
+      font-size: 2rem !important
+
+    h2
+      font-size: 1rem
+      margin: 1rem
+
+    .row
+      width: 100%
+
+      .column
+        width: auto
+
+      .column:last-child
+        margin-bottom: 1rem
