@@ -13,12 +13,12 @@ const Info = () => {
       </div>
       <div className="column">
         <h3>Fontes de dados:</h3>
-        <a href="https://www.ibge.gov.br/estatisticas/sociais/populacao/9109-projecao-da-populacao.html?=&t=resultados">
+        <a href="https://www.ibge.gov.br/estatisticas/sociais/populacao/9109-projecao-da-populacao.html?=&t=resultados" target="_blank">
           https://www.ibge.gov.br/estatisticas/sociais/populacao/9109-projecao-da-populacao.html?=&t=resultados
         </a>
         <br/>
         <br/>
-        <a href="https://github.com/wcota/covid19br/blob/master/cases-brazil-states.csv">
+        <a href="https://github.com/wcota/covid19br/blob/master/cases-brazil-states.csv" target="_blank">
           https://github.com/wcota/covid19br/blob/master/cases-brazil-states.csv
         </a>
       </div>

@@ -22,6 +22,7 @@
 
   h2
     text-align: center
+    font-size: 28px
 
     span
       color: $primary
@@ -30,6 +31,7 @@
     color: $primary
     font-size: 48px
     font-weight: normal
+    text-align: center
 
   button
     padding: 1rem 2rem
@@ -51,14 +53,38 @@
         color: $primary
         word-wrap: break-word
 
+@media screen and (max-width: 1200px)
+  .result-container
+
+    .box
+      width: 70%
+
+    h2
+      font-size: 20px
+
+    h1
+      font-size: 28px
+
+    .row
+      flex-direction: column
+      width: 100%
+
+      .column
+        width: auto
+
+      .column:last-child
+        margin-bottom: 1rem
+
 @media screen and (max-width: 769px)
 
   .result-container
-    height: auto
+    height: 95vh
 
     .box
-      width: 100% !important
+      width: 90% !important
       padding: 0
+      height: 80vh
+      overflow: auto
 
     h1
       font-size: 2rem !important
@@ -67,11 +93,6 @@
       font-size: 1rem
       margin: 1rem
 
-    .row
-      width: 100%
-
-      .column
-        width: auto
-
-      .column:last-child
-        margin-bottom: 1rem
+// @media screen and (max-height: 800px)
+//   .result-container
+//     align-items: flex-start
