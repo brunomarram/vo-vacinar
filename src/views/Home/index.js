@@ -9,12 +9,14 @@ import Form from "./components/Form";
 import { useHistory } from "react-router";
 import { useState } from "react";
 import request from "../../api/request";
+import Loading from "../../components/Loading";
 
 const Home = () => {
   const history = useHistory();
 
   const [age, setAge] = useState("");
   const [state, setState] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const [errors, setErrors] = useState({
     age: "",
@@ -43,6 +45,8 @@ const Home = () => {
   };
 
   const submit = async () => {
+    setLoading(true)
+
     if(isValidForm()) {
       try {
         const result = await request("POST", "predicao/", {
@@ -50,6 +54,8 @@ const Home = () => {
           idade: age,
           estado: state,
         });
+
+        setLoading(false)
 
         if(result.data?.erro) {
           setErrors(errors => ({ ...errors, backend: result.data.erro }))
@@ -69,6 +75,7 @@ const Home = () => {
       }
     }
 
+    setLoading(false)
     return true;
   };
 
@@ -93,6 +100,7 @@ const Home = () => {
         onClose={handleClose}
         message={errors.backend}
       />
+      {loading ? <Loading/> : null}
     </form>
   );
 };
