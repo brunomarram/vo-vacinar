@@ -10,6 +10,7 @@ import Info from "./components/Info";
 
 import "./style.sass"
 import { useEffect } from "react";
+import InfoAlert from "./components/InfoAlert";
 
 const Result = () => {
   const history = useHistory();
@@ -41,9 +42,9 @@ const Result = () => {
           Considerando que você possui <span>{age} anos</span> e mora no estado de{" "}
           <span>{state}</span> que tem <span>{numberWithThousandsSeparator(firstStep)}</span> vacinados com a primeira
           dose e <span>{numberWithThousandsSeparator(secondStep)}</span> com a segunda, e uma população de{" "}
-          <span>{numberWithThousandsSeparator(population)}</span> hab. Sua vacinação está estimada em:
+          <span>{numberWithThousandsSeparator(population)}</span> hab. Sua vacinação está estimada em aproximadamente:
         </h2>
-        <h1>{moment(formatDate(result)).format("DD [de] MMMM [de] YYYY")}</h1>
+        <h1>{result ? moment(formatDate(result)).format("DD [de] MMMM [de] YYYY") : "Você já pode ser vacinado! Procure mais informações na sua cidade"}</h1>
         <Button
           variant="contained"
           color="primary"
@@ -52,6 +53,7 @@ const Result = () => {
         >
           Estimar novamente
         </Button>
+        <InfoAlert/>
         <Info/>
       </div>
     </section>
