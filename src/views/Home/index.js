@@ -34,7 +34,7 @@ const Home = () => {
 
     status = validate(!state, "state", "Estado é obrigatório")
     if(!status) return false;
-    status = validate(!age || age < 10 || age > 90, "age", "Idade inválida")
+    status = validate(!age || age < 16 || age > 90, "age", "Idade inválida")
     if(!status) return false;
 
     return status
